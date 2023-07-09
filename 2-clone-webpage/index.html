@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <link rel="icon" href="favicon/favicon.ico" />
+    <title>Cogoport - Book & Manage Shipments & Cargo Online</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      window.addEventListener("scroll", () => {
+        var navbar = document.querySelector("header");
+        var popup = document.getElementById("whatsapp_popup");
+        if (window.scrollY) {
+          navbar.style.background = "white";
+          navbar.style.boxShadow = "0 1px 6px rgba(169,188,218,.65);";
+        } else {
+          navbar.style.background = "#fbdc00";
+          navbar.style.boxShadow = "none";
+        }
+        if (window.innerWidth >= 768) {
+          if (window.scrollY >= 415) {
+            popup.style.display = "flex";
+          } else {
+            popup.style.display = "none";
+          }
+        }
+      });
+      addEventListener("resize", () => {
+        var popup = document.getElementById("whatsapp_popup");
+        if (window.innerWidth < 768) {
+          popup.style.display = "none";
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="main">
+      <div id="whatsapp_popup">
+        <img src="images/popup.svg" />
+        <div>Whatsapp Us</div>
+      </div>
+
+      <div id="rates_carousel">
+        <div id="rates_carousel_wrapper">
+          <div class="rates_list">
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>GONGYI</p>
+              <p class="red">USD 135</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">5.17%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Malta Freeport</p>
+              <p class="red">USD 869</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">9.05%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Barranquilla</p>
+              <p class="red">USD 2,366</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">7.22%</p>
+            </div>
+            <div class="rates_item">
+              <p>Guangzhou (CN)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <p class="green">USD 824</p>
+              <img src="images/dropdown_green.svg" />
+              <p class="green">-2.23%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Bangkok Sahathai</p>
+              <p class="red">USD 22</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">5.31%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Moss</p>
+              <p class="green">USD 5,850</p>
+              <img src="images/dropdown_green.svg" />
+              <p class="green">-2.59%</p>
+            </div>
+            <div class="rates_item">
+              <p>Ningbo Pt</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <p class="red">USD 732</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">7.42%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Tokyo</p>
+              <p class="green">USD 96</p>
+              <img src="images/dropdown_green.svg" />
+              <p class="green">-7.33%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Helsinki (Helsingfors)</p>
+              <p class="red">USD 73</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">4.66%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Rio Haina</p>
+              <p class="red">USD 1,639</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">7.62</p>
+            </div>
+          </div>
+          <div class="rates_list">
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>GONGYI</p>
+              <p class="red">USD 135</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">5.17%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Malta Freeport</p>
+              <p class="red">USD 869</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">9.05%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Barranquilla</p>
+              <p class="red">USD 2,366</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">7.22%</p>
+            </div>
+            <div class="rates_item">
+              <p>Guangzhou (CN)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <p class="green">USD 824</p>
+              <img src="images/dropdown_green.svg" />
+              <p class="green">-2.23%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Bangkok Sahathai</p>
+              <p class="red">USD 22</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">5.31%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Moss</p>
+              <p class="green">USD 5,850</p>
+              <img src="images/dropdown_green.svg" />
+              <p class="green">-2.59%</p>
+            </div>
+            <div class="rates_item">
+              <p>Ningbo Pt</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <p class="red">USD 732</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">7.42%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Tokyo</p>
+              <p class="green">USD 96</p>
+              <img src="images/dropdown_green.svg" />
+              <p class="green">-7.33%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Helsinki (Helsingfors)</p>
+              <p class="red">USD 73</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">4.66%</p>
+            </div>
+            <div class="rates_item">
+              <p>Jawaharlal Nehru (Nhava Sheva)</p>
+              <img src="images/arrow-right-black.svg" />
+              <p>Rio Haina</p>
+              <p class="red">USD 1,639</p>
+              <img src="images/dropdown_red.svg" />
+              <p class="red">7.62</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="ad_bar">
+        <div id="ad_content">
+          <img
+            src="images/cogoport_icon.webp"
+            alt="icon"
+            width="16"
+            height="16"
+          />
+          <strong>
+            Limited Time Offer: Get 15% off on all Cogo Assured Rates.
+            <a target="_blank">Book Today!</a>
+          </strong>
+        </div>
+        <img
+          src="images/crossSign.png"
+          id="cross_img"
+          alt="close_ad"
+          width="1em"
+          height="1em"
+        />
+      </div>
+
+      <header>
+        <div id="mobile_menu">
+          <button id="mobile_menu_button">
+            <img src="images/menu-button.svg" alt="menu-button" />
+          </button>
+        </div>
+        <div id="nav_logo">
+          <a target="_blank">
+            <img src="images/logo.svg" alt="logo" />
+          </a>
+        </div>
+        <nav>
+          <ul id="nav_list">
+            <li class="nav_item">
+              <div>
+                <span>Products</span>
+                <img src="images/dropdown.svg" alt="'dropdown-arrow" />
+              </div>
+            </li>
+            <li class="nav_item">
+              <div>
+                <span>Partners</span>
+                <img src="images/dropdown.svg" alt="'dropdown-arrow" />
+              </div>
+            </li>
+            <li class="nav_item">
+              <div>
+                <span>Tools</span>
+                <img src="images/dropdown.svg" alt="'dropdown-arrow" />
+              </div>
+            </li>
+            <li class="nav_item">
+              <div>
+                <span>Company</span>
+                <img src="images/dropdown.svg" alt="'dropdown-arrow" />
+              </div>
+            </li>
+            <li class="nav_item">
+              <div>
+                <span>Knowledge Center</span>
+                <img src="images/dropdown.svg" alt="'dropdown-arrow" />
+              </div>
+            </li>
+            <li class="nav_item">
+              <div>
+                <span>Contact Us</span>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <ul id="auth_nav">
+          <li class="auth_item">
+            <img src="images/smile.svg" alt="smile-icon" />
+            <span>login</span>
+          </li>
+          <li class="auth_item" style="margin: 0">
+            <button id="signup_button" type="button">Sign Up</button>
+          </li>
+        </ul>
+      </header>
+
+      <div id="cover_container">
+        <div id="cover_content">
+          <div id="cover_text">
+            <h1>Grow Faster, Go Global.</h1>
+            <p>
+              Strengthen your Supply Chain, and Scale your Business<br />
+              with Reliable Shipping and Cashflows.
+            </p>
+            <form id="contact_form">
+              <div id="contact_form_label">Talk to us now!</div>
+              <div id="contact_form_wrapper">
+                <div id="contact_form_input">
+                  <div id="contact_form_code">
+                    <div>
+                      <div id="code_text">
+                        <span id="country_code">+91</span>
+                      </div>
+                      <div id="form_dropdown">
+                        <img src="images/dropdown-grey.svg" />
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    id="whatsapp_icon"
+                    src="images/whatsapp.svg"
+                    alt="whatsapp-icon"
+                  />
+                  <input
+                    placeholder="Whatsapp number"
+                    id="whatsapp_input"
+                    type="telephone"
+                    name="mobile_number"
+                  />
+                  <button id="submit_button" type="submit">
+                    <div>Get Started</div>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <video autoplay muted loop playsinline id="cover_video">
+            <source src="images/cover-video.webm" type="video/webm" />
+          </video>
+          <video autoplay muted loop playsinline id="cover_video_mobile">
+            <source src="images/cover-video-mobile.webm" type="video/webm" />
+          </video>
+        </div>
+      </div>
+      <div id="stats">
+        <ul id="stats_list">
+          <li class="stats_item">
+            <h2>180+</h2>
+            <h4>Countries Served</h4>
+          </li>
+          <li class="stats_item">
+            <h2>10,000</h2>
+            <h4>Ports Pairs Served</h4>
+          </li>
+          <li class="stats_item">
+            <h2>30,000+</h2>
+            <h4>Tons of Air Cargo Moved</h4>
+          </li>
+          <li class="stats_item">
+            <h2>700,000</h2>
+            <h4>Containers Moved</h4>
+          </li>
+        </ul>
+      </div>
+
+      <div id="curve1"><div></div></div>
+
+      <div id="offwhite_bg">
+        <div id="banner1">
+          <div id="banner1_text">
+            <h2>One Stop Solution for Your Supply Chain</h2>
+            <span
+              >Connected Shipping, Finance, and Trade-tech, to Power Global
+              Trade and Supply Chains.</span
+            >
+          </div>
+          <div id="banner1_img">
+            <img src="images/map-supply-chain.webp" alt="routes-map" />
+          </div>
+        </div>
+
+        <div id="products">
+          <h3>Our Products</h3>
+          <div id="category_list">
+            <div class="product_category">
+              <h4>End to End Cross Border Logistics</h4>
+              <div class="product_list">
+                <div class="product_card">
+                  <img src="images/product_fcl.svg" alt="prouct-image" />
+                  <h4>Ocean: FCL</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+                <div class="product_card">
+                  <img src="images/product_lcl.svg" alt="prouct-image" />
+                  <h4>Ocean: LCL</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                    />
+                  </span>
+                </div>
+                <div class="product_card">
+                  <img src="images/product_air.svg" alt="prouct-image" />
+                  <h4>International Air</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                    />
+                  </span>
+                </div>
+                <div class="product_card">
+                  <img src="images/product_customs.svg" alt="prouct-image" />
+                  <h4>Customs, CFS, & Handling</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                    />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="product_category">
+              <h4>Domestic Logistics</h4>
+              <div class="product_list">
+                <div class="product_card">
+                  <img src="images/product_ftl.svg" alt="prouct-image" />
+                  <h4>FTL, PTL</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+                <div class="product_card">
+                  <img src="images/product_trailer.svg" alt="prouct-image" />
+                  <h4>Trailer & Rail Container Haulage</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+              </div>
+            </div>
+            <div class="product_category">
+              <h4>Supply Chain Solutions</h4>
+              <div class="product_list">
+                <div class="product_card">
+                  <img
+                    src="images/product_cogoassured.svg"
+                    alt="prouct-image"
+                  />
+                  <h4>CogoAssured</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+                <div class="product_card">
+                  <img src="images/product_domestic.svg" alt="prouct-image" />
+                  <h4>Domestic Fulfilment</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+                <div class="product_card">
+                  <img src="images/product_dtd.svg" alt="prouct-image" />
+                  <h4>Door to Door Shipments</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+                <div class="product_card">
+                  <img src="images/product_insurance.svg" alt="prouct-image" />
+                  <h4>Cargo Insurance</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+              </div>
+            </div>
+            <div class="product_category">
+              <h4>Financial Services</h4>
+              <div class="product_list">
+                <div class="product_card">
+                  <img src="images/product_later.svg" alt="prouct-image" />
+                  <h4>Pay Later</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+                <div class="product_card">
+                  <img src="images/product_factoring.svg" alt="prouct-image" />
+                  <h4>Export Factoring</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+              </div>
+            </div>
+            <div class="product_category">
+              <h4>Trade Management Solutions</h4>
+              <div class="product_list">
+                <div class="product_card">
+                  <img src="images/product_rates.svg" alt="prouct-image" />
+                  <h4>Freight Rates & Schedules</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+                <div class="product_card">
+                  <img src="images/product_quotations.svg" alt="prouct-image" />
+                  <h4>Quick Premium Quotations</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+                <div class="product_card">
+                  <img src="images/product_calculator.svg" alt="prouct-image" />
+                  <h4>Duties & Taxes Calculator</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+                <div class="product_card">
+                  <img src="images/product_tracking.svg" alt="prouct-image" />
+                  <h4>Tracking & Visibility</h4>
+                  <span
+                    >Find Out More<img
+                      src="images/arrow-right.svg"
+                      alt="arrow-icon"
+                  /></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="companies">
+        <h3>Trusted by</h3>
+        <div id="carousel">
+          <div id="carousel_content">
+            <div class="carousel_list">
+              <img
+                src="images/voltas.webp"
+                alt="voltas-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/vedanta.webp"
+                alt="vedanta-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/bluestar_logo.webp"
+                alt="bluestar-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/bhilosa_logo.webp"
+                alt="bhilosa-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/reliance_logo.webp"
+                alt="reliance-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/ultratech_logo.webp"
+                alt="ultratech-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/tvs-logo.webp"
+                alt="tvs-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/jsw-logo.webp"
+                alt="jsw-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/bombay-dyeing-logo.webp"
+                alt="bombay-dyeing-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/air-asia-logo.webp"
+                alt="air-asia-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/ais-logo.webp"
+                alt="ais-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/tvs-logo.webp"
+                alt="tvs-logo"
+                class="company_logo"
+              />
+            </div>
+            <div class="carousel_list">
+              <img
+                src="images/voltas.webp"
+                alt="voltas-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/vedanta.webp"
+                alt="vedanta-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/bluestar_logo.webp"
+                alt="bluestar-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/bhilosa_logo.webp"
+                alt="bhilosa-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/reliance_logo.webp"
+                alt="reliance-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/ultratech_logo.webp"
+                alt="ultratech-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/tvs-logo.webp"
+                alt="tvs-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/jsw-logo.webp"
+                alt="jsw-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/bombay-dyeing-logo.webp"
+                alt="bombay-dyeing-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/air-asia-logo.webp"
+                alt="air-asia-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/ais-logo.webp"
+                alt="ais-logo"
+                class="company_logo"
+              />
+              <img
+                src="images/tvs-logo.webp"
+                alt="tvs-logo"
+                class="company_logo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="banner2">
+        <div id="banner2_content">
+          <h3>Ready to take your Supply Chain to the Next Level?</h3>
+          <button type="button">
+            <span
+              >Get Started
+              <img src="images/dropdown_white.svg" alt="dropdown-arrow" />
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div id="procedure">
+        <div id="procedure_content">
+          <h3>How it Works</h3>
+          <div id="procedure_toggle">
+            <button class="toggle_button selected" type="button">
+              <span>For Cargo Owners</span>
+            </button>
+            <button class="toggle_button" type="button">
+              <span>For Logistics Partners</span>
+            </button>
+          </div>
+          <div>
+            <div id="laptop_diagram">
+              <div>
+                <div class="diagram_label">
+                  <p>Stage 1:</p>
+                  <div class="diagram_label_heading">
+                    <img src="images/stage1.svg" alt="process-image" />
+                    <span>Discover</span>
+                  </div>
+                  <span class="diagram_label_content">
+                    <div>•</div>
+                    <p>Spot and Contract Rates for Logistics</p>
+                  </span>
+                  <span class="diagram_label_content">
+                    <div>•</div>
+                    <p>
+                      Service details, Trade Compliance/ Regulatory Requirements
+                    </p>
+                  </span>
+                  <span class="diagram_label_content">
+                    <div>•</div>
+                    <p>
+                      Knowledge and Insights on Trade, Logistics, Finance,
+                      Supply Chains
+                    </p>
+                  </span>
+                </div>
+                <div class="diagram_label">
+                  <p>Stage 2:</p>
+                  <div class="diagram_label_heading">
+                    <img src="images/stage2.svg" alt="process-image" />
+                    <span>Plan & Book</span>
+                  </div>
+                  <span class="diagram_label_content">
+                    <div>•</div>
+                    <p>
+                      Route, Service Schedules, Inventory, and Cashflow planning
+                    </p>
+                  </span>
+                  <span class="diagram_label_content">
+                    <div>•</div>
+                    <p>
+                      Book with upfront visibility of service terms and
+                      inclusions
+                    </p>
+                  </span>
+                </div>
+                <div class="diagram_arrow" style="top: 104px; left: 300px">
+                  <img src="images/diagram_arrow1.webp" alt="diagram_arrow" />
+                </div>
+                <div class="diagram_arrow" style="bottom: 116px; left: 300px">
+                  <img src="images/diagram_arrow2.webp" alt="diagram_arrow" />
+                </div>
+              </div>
+              <div id="diagram_image">
+                <img src="images/laptop.webp" alt="laptop" />
+              </div>
+              <div>
+                <div class="diagram_label">
+                  <p>Stage 3:</p>
+                  <div class="diagram_label_heading">
+                    <img src="images/stage3.svg" alt="process-image" />
+                    <span>Execute</span>
+                  </div>
+                  <span class="diagram_label_content">
+                    <div>•</div>
+                    <p>Ocean and Air Cargo Tracking</p>
+                  </span>
+                  <span class="diagram_label_content">
+                    <div>•</div>
+                    <p>Documentation and Filings, Handled</p>
+                  </span>
+                  <span class="diagram_label_content">
+                    <div>•</div>
+                    <p>
+                      Multi-modal: Smooth coordination and handovers between
+                      various service providers and stakeholders
+                    </p></span
+                  >
+                </div>
+                <div class="diagram_label">
+                  <p>Stage 4:</p>
+                  <div class="diagram_label_heading">
+                    <img src="images/stage4.svg" alt="process-image" />
+                    <span>Finance</span>
+                  </div>
+                  <span class="diagram_label_content">
+                    <div>•</div>
+                    <p>Deferred payment on Logistics with PayLater</p>
+                  </span>
+                  <span class="diagram_label_content">
+                    <div>•</div>
+                    <p>Trade Finance for your Cargo with Export Factoring</p>
+                  </span>
+                </div>
+                <div class="diagram_arrow" style="top: 104px; right: 300px">
+                  <img src="images/diagram_arrow3.webp" alt="diagram_arrow" />
+                </div>
+                <div class="diagram_arrow" style="bottom: 116px; right: 300px">
+                  <img src="images/diagram_arrow4.webp" alt="diagram_arrow" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="industries">
+        <div id="industries_wrapper">
+          <h3>Industries Served</h3>
+          <div id="industries_list">
+            <div class="industry_item">
+              <img
+                src="images/chemical.svg"
+                alt="industry-icon"
+                style="width: 100px; height: 100px"
+              />
+              <span>Chemicals</span>
+            </div>
+            <div class="industry_item">
+              <img
+                src="images/paracetamol.svg"
+                alt="industry-icon"
+                style="width: 100px; height: 100px"
+              />
+              <span>Pharmaceuticals</span>
+            </div>
+            <div class="industry_item">
+              <img
+                src="images/electronics.svg"
+                alt="industry-icon"
+                style="width: 100px; height: 100px"
+              />
+              <span>Electronics</span>
+            </div>
+            <div class="industry_item">
+              <img
+                src="images/whitegoods.svg"
+                alt="industry-icon"
+                style="width: 84px; height: 100px; margin-left: 8px"
+              />
+              <span>White Goods</span>
+            </div>
+            <div class="industry_item">
+              <img
+                src="images/textiles.svg"
+                alt="industry-icon"
+                style="width: 88px; height: 100px; margin-left: 6px"
+              />
+              <span>Textiles</span>
+            </div>
+            <div class="industry_item">
+              <img
+                src="images/manufacturing.svg"
+                alt="industry-icon"
+                style="width: 100px; height: 100px"
+              />
+              <span>Manufacturing</span>
+            </div>
+            <div class="industry_item">
+              <img
+                src="images/agriculture.svg"
+                alt="industry-icon"
+                style="width: 100px; height: 100px"
+              />
+              <span>Agriculture</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="banner3">
+        <div id="banner3_content">
+          <h2>Get Started Today</h2>
+          <div id="banner3_subtext">
+            <p>Plan, Book and Finance your shipment in one place.</p>
+            Experience how Cogoport’s Global Trade Platform can Turbocharge your
+            Business.
+          </div>
+          <button>Get Started</button>
+        </div>
+        <div id="banner3_img">
+          <img src="images/trade-tech-home.webp" alt="get-started-image" />
+        </div>
+      </div>
+
+      <div id="banner4">
+        <div id="thumbnail">
+          <img src="images/thumbnail.webp" alt="thumbnail" />
+          <div id="play_button">
+            <img src="images/play-button.png" alt="playibutton" />
+          </div>
+        </div>
+        <div id="banner4_wrapper">
+          <div id="banner4_content">
+            <div id="banner4_text">
+              <h3>Grow Faster with Cogoport</h3>
+              <p>
+                Know more about Cogoport’s Global Trade Platform<sup>TM</sup>
+              </p>
+            </div>
+            <button type="button">
+              <span>
+                Know More<img src="images/dropdown.svg" alt="dropdown-arrow" />
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="blogs">
+        <h3>Blogs</h3>
+        <div id="blogs_list">
+          <div class="blog_card">
+            <img src="images/blog_image_1.jpeg" alt="blog-image-1" />
+            <div class="blog_info">
+              <h4>Trade News</h4>
+              <h4>
+                Cogoport Enables Movement of 11 Envirotainer Containers from
+                India to Italy&nbsp;
+              </h4>
+              <p>
+                Cogoport’s collective logistics and technical expertise came in
+                handy as our operations and technical teams went the extra mile
+                and designed bespoke solutions on the go.
+              </p>
+              <div class="blog_footer">
+                <span
+                  >Read More<img
+                    src="images/arrow-right.svg"
+                    alt="arrow-icon"
+                  />
+                </span>
+                <h4>05 July 2023</h4>
+              </div>
+            </div>
+          </div>
+          <div class="blog_card">
+            <img src="images/blog_image_2.jpeg" alt="blog-image-2" />
+            <div class="blog_info">
+              <h4>Expert Speak</h4>
+              <h4>Cogoport: A Global Trade Platform</h4>
+              <p>
+                Cogoport leverages technology and caters to enterprises of all
+                sizes. Our solutions improve predictability and enhance human
+                capabilities.
+              </p>
+              <div class="blog_footer">
+                <span
+                  >Read More<img
+                    src="images/arrow-right.svg"
+                    alt="arrow-icon"
+                  />
+                </span>
+                <h4>03 July 2023</h4>
+              </div>
+            </div>
+          </div>
+          <div class="blog_card">
+            <img src="images/blog_image_3.jpeg" alt="blog-image-3" />
+            <div class="blog_info">
+              <h4>Industry Basics</h4>
+              <h4>
+                Understanding Lean Supply Chain Management: Definition and
+                Considerations
+              </h4>
+              <p>
+                Lean Supply Chain Management represents the extension of Lean
+                Thinking across the entire supply chain. So, what are the
+                benefits and key components? Read on!
+              </p>
+              <div class="blog_footer">
+                <span
+                  >Read More<img
+                    src="images/arrow-right.svg"
+                    alt="arrow-icon"
+                  />
+                </span>
+                <h4>24 June 2023</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button">View All</button>
+      </div>
+
+      <div id="curve2"><div></div></div>
+      <footer>
+        <div id="subscription">
+          <div id="subscription_img">
+            <img src="images/subscription_img.webp" alt="subscriber-image" />
+          </div>
+          <div id="subscription_content">
+            <h3>Subscribe to our newsletter now!</h3>
+            <p>Don’t miss out on the latest happenings at Cogoport.</p>
+            <form id="subscription_form">
+              <input type="email" placeholder="Enter your email here" />
+              <button>
+                Subscribe<img
+                  src="images/arrow-right-white.svg"
+                  alt="dropdown-arrow"
+                />
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div id="links">
+          <div class="links_column">
+            <p>Products</p>
+            <p>Global Trade Platform</p>
+            <p class="bold">Cross-border Logistic</p>
+            <p>Ocean: FCL</p>
+            <p>Ocean: LCL</p>
+            <p>International Air</p>
+            <p>Customs, CFS, and Handling</p>
+            <p class="bold">Domestic Logistics</p>
+            <p>Surface: FTL, PTL, Rail</p>
+            <p>Trailer & Rail Container Haulage</p>
+            <p class="bold">Trade Management Solutions</p>
+            <p>Freight Rates & Schedules</p>
+            <p>Quick Premium Quotations</p>
+            <p>Duties & Taxes Calculator</p>
+            <p>Tracking & Visibility</p>
+            <p class="bold">CogoMaps</p>
+            <p>Shipment Planner</p>
+            <p>Trade Info</p>
+            <p>Global Routes</p>
+            <p>Live Congestion</p>
+          </div>
+          <div class="links_column">
+            <p></p>
+            <p class="bold">Supply Chain Solutions</p>
+            <p>CogoAssured</p>
+            <p>Fulfilment Logistics</p>
+            <p>Door to Door Shipments</p>
+            <p>Cargo Insurance</p>
+            <p class="bold">Financial Services</p>
+            <p>Pay Later</p>
+            <p>Export Factoring</p>
+            <p>CogoFx</p>
+          </div>
+          <div class="links_column">
+            <p>Partners</p>
+            <p>Global Partner Network</p>
+            <p class="bold">Our Logistics Providers</p>
+            <p>Freight Forwarders</p>
+            <p>Transporters</p>
+            <p>Custom Agents</p>
+            <p class="bold">Partnership Program</p>
+            <p>Channel Partners</p>
+            <p>Overseas Agents</p>
+          </div>
+          <div class="links_column">
+            <p>Tools</p>
+            <p>Rate Discovery</p>
+            <p>Freight Rate Trends</p>
+            <p>Tracking</p>
+            <p>HS Code Finder</p>
+            <p>Personal Trade Assistant</p>
+          </div>
+          <div class="links_column">
+            <p>Company</p>
+            <p>About us</p>
+            <p>Careers</p>
+            <p>Newsroom</p>
+            <p>Leadership</p>
+            <p>Login</p>
+            <p>Sign Up</p>
+          </div>
+          <div class="links_column">
+            <p>Knowledge Center</p>
+            <p>Blogs</p>
+            <p>News & Updates</p>
+            <p>Events</p>
+            <p>Reports</p>
+            <p>Notifications</p>
+            <p class="bold">Resources</p>
+            <p>Port Info</p>
+            <p>Shipping Terms</p>
+            <p>Help Center</p>
+            <p>Incoterms</p>
+          </div>
+        </div>
+        <div id="links_mobile">
+          <div class="link_item_mobile">
+            <div>
+              <h3>Products</h3>
+              <img src="images/dropdown.svg" alt="dropdown-arrow" />
+            </div>
+          </div>
+          <div class="link_item_mobile">
+            <div>
+              <h3>Partners</h3>
+              <img src="images/dropdown.svg" alt="dropdown-arrow" />
+            </div>
+          </div>
+          <div class="link_item_mobile">
+            <div>
+              <h3>Tools</h3>
+              <img src="images/dropdown.svg" alt="dropdown-arrow" />
+            </div>
+          </div>
+          <div class="link_item_mobile">
+            <div>
+              <h3>Company</h3>
+              <img src="images/dropdown.svg" alt="dropdown-arrow" />
+            </div>
+          </div>
+          <div class="link_item_mobile">
+            <div>
+              <h3>Knowledge Center</h3>
+              <img src="images/dropdown.svg" alt="dropdown-arrow" />
+            </div>
+          </div>
+          <div class="link_item_mobile">
+            <div><h3>Contact Us</h3></div>
+          </div>
+        </div>
+
+        <div id="routes">
+          <div class="routes_column">
+            <a target="_blank">Nanhai to Jawaharlal Nehru (Nhava Sheva)</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Liverpool</a>
+            <a>Port Tampa (US) to Jawaharlal Nehru (Nhava Sheva)</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Fremantle</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Cai Mep</a>
+            <a>Yantian Pt to Jawaharlal Nehru (Nhava Sheva)</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Tunis</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Hong Kong</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Rades</a>
+            <a>Navegantes to Jawaharlal Nehru (Nhava Sheva)</a>
+          </div>
+          <div class="routes_column">
+            <a>Gwangyang (Kwangyang) to Jawaharlal Nehru (Nhava Sheva)</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Nouadhibou</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Novorossiysk (RU)</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Kumport</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Wilmington Nc</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to EL Paso</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Nouakchott</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Dong Guan</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Tokyo</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Houston (US)</a>
+          </div>
+          <div class="routes_column">
+            <a>Jawaharlal Nehru (Nhava Sheva) to Wuhan</a>
+            <a>Coronel to Jawaharlal Nehru (Nhava Sheva)</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to CaacupÃ© (PY)</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Melbourne</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Puerto Rico (US)</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Fukuoka (JP)</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Lianhuashan</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to King Abdullah Port</a>
+            <a>Nanchang to Jawaharlal Nehru (Nhava Sheva)</a>
+            <a>Jawaharlal Nehru (Nhava Sheva) to Knoxville</a>
+          </div>
+        </div>
+
+        <div id="end_of_page">
+          <div id="copyright">
+            <p>© 2023 Cogo Universe PTE. All rights reserved.</p>
+            <span>
+              <a>Terms and Conditions |</a>
+              <a> Cookie policy |</a>
+              <a> Privacy and Data Protection Policy</a>
+            </span>
+          </div>
+          <div id="eof_right">
+            <div id="language">
+              <div><img src="images/globe.webp" alt="/" /></div>
+              <div>English (IN)</div>
+            </div>
+            <div id="contacts">
+              <div>
+                <img src="images/linkedin_logo.svg" alt="linkedin-logo" />
+              </div>
+              <div>
+                <img src="images/facebook_logo.svg" alt="facebook-logo" />
+              </div>
+              <div>
+                <img src="images/instagram_logo.svg" alt="instagram-logo" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
