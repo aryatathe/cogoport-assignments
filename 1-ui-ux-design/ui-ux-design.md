@@ -28,14 +28,23 @@
 
 ## Website 2: [https://www.iitkgp.ac.in/](https://www.iitr.ac.in/)
 
-1.  1
+1.  The header is an unfixed element on the website and scrolls out of view very early. It should be fixed to the top of the screen so that the navigation links are accessible to the users and they don't have to scroll to the top each time.
 
-    ![1](https://imgur.com/Ghg4X3x.png)
+    ![1.1](https://imgur.com/819kRvv.png)
+    ![1.2](https://imgur.com/buc3Wxy.png)
 
-2.  2
+2.  Clicking the search button on the header opens up a fullscreen overlay with just a search bar and a back button, which is excessive and unnecessary. The overlay could be either just the size of the header, or should have substantial transperancy even if is it fullscreen. Also, it should close when the user clicks away from the search bar.
 
-3.  3
+    ![2](https://imgur.com/6sRTpn3.png)
 
-4.  4
+3.  The icons on these banners are unevenly structured. The icons should have more margin from the text to their right, and all texts should be larger when taking the image sizes infto consideration. Ideally, the subheadings should be below the icons instead of beside them, which would be a more streamlined design.
 
-5.  5
+    ![3](https://imgur.com/63V1j1O.png)
+
+4.  The date cards (right) are uneven. They should be designed to accomodate both single dates as well as date ranges, either by having different font sizes for each or a constant size for the card regardless of the content. Also, they seem to be differing in size even for single dates.
+
+    ![4](https://imgur.com/l13G1Ww.png)
+
+5.  The layout feels very uneven, the first two sections have column-oriented links while the bottom two have row-oriented ones. The latter ones feel too unnecessarily spaced apart, making the whole section very messy to look at and navigate.
+
+    ![5](https://imgur.com/W655VQa.png)
