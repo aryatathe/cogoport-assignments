@@ -25,3 +25,17 @@
 5. The statistics section is very cramped and looks very small especially on wider screens. It should have higher spacing from the elements above and below it to be prominent.
 
    ![5](https://imgur.com/hMDvJYj.png)
+
+## Website 2: [https://www.iitkgp.ac.in/](https://www.iitr.ac.in/)
+
+1.  1
+
+    ![1](https://imgur.com/Ghg4X3x.png)
+
+2.  2
+
+3.  3
+
+4.  4
+
+5.  5
