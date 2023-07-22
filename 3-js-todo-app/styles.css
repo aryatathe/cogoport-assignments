@@ -38,6 +38,14 @@ input {
   outline: 0;
   background: #ffffff22;
   color: #fff;
+  text-overflow: ellipsis;
+}
+input[type="checkbox"] {
+  opacity: 0.2;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked {
+  opacity: 1;
 }
 ul {
   list-style-type: none;
@@ -100,7 +108,6 @@ ul {
   transform: rotate(45deg);
 }
 #filter-area.hide #filter-button img {
-  height: 25px;
   transform: rotate(0);
 }
 #filter-area label {
@@ -113,22 +120,17 @@ ul {
   border-radius: 9999px;
   font-size: 16px;
 }
-#date-filters > label,
+#date-filters div {
+  display: inline-block;
+}
+#date-filters label,
 #filter-area span {
   color: #6eeb83;
-}
-#filter-pending,
-#filter-missed {
-  color: #6eeb83;
-  border-radius: 9999px;
-  padding: 5px 10px;
-  background: #ffffff22;
-  margin-left: 10px;
-  font-size: 16px;
 }
 
 #filter-radio-group {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 #filter-radio-group > span {
@@ -142,7 +144,7 @@ ul {
   padding: 2px;
   cursor: pointer;
 }
-#filter-radio-group > input:after {
+#filter-radio-group > input::after {
   content: "";
   position: absolute;
   top: -1px;
@@ -152,8 +154,18 @@ ul {
   background: #3c3c3e;
   border-radius: 50%;
 }
-#filter-radio-group > input:checked:after {
+#filter-radio-group > input:checked::after {
   background: #6eeb83;
+}
+
+#filter-pending,
+#filter-missed {
+  color: #6eeb83;
+  border-radius: 9999px;
+  padding: 5px 10px;
+  background: #ffffff22;
+  margin-left: 10px;
+  font-size: 16px;
 }
 
 #list {
@@ -176,7 +188,7 @@ ul {
 .separator {
   height: 5px;
   border-bottom: solid 2px #ffffff22;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 .list-item input {
   background: transparent;
@@ -194,11 +206,13 @@ ul {
 .edit-task {
   width: 100%;
   font-size: 32px;
-  overflow-wrap: normal;
 }
 .task-delete-button img {
   height: 25px;
   transform: rotate(45deg);
+}
+.list-item > div:nth-child(1) {
+  margin-bottom: 20px;
 }
 .list-item > div:nth-child(2) {
   margin-left: 44px;
@@ -260,33 +274,255 @@ ul {
   height: 18px;
 }
 
-.new-tag {
-  max-width: 80px;
-  margin-left: 44px;
-}
-.tag-add-button img {
-  height: 10px;
+.list-item > .tag-container {
+  display: initial;
 }
 
 .tags {
-  margin-left: 10px;
+  display: contents;
+  margin-left: 0;
 }
-.tags > li {
+.tags > li,
+.add-tag-wrapper {
   display: inline-block;
   background: #ffffff11;
   padding: 3px 8px;
   margin: 5px;
   border-radius: 9999px;
   color: #6eeb83bb;
+  font-size: 16px;
 }
 .tag-delete-button img {
   height: 10px;
   transform: rotate(45deg);
 }
+.new-tag {
+  max-width: 80px;
+  font-size: 16px;
+}
+.tag-add-button img {
+  height: 10px;
+}
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   #main {
     max-width: none;
     width: 100%;
+  }
+  #new-input,
+  #new-category,
+  #new-date {
+    border-radius: 0;
+  }
+  #new-button {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+  .list-item {
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  h1 {
+    font-size: 108px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  #input-area {
+    justify-content: center;
+  }
+  #new-input,
+  #new-category,
+  #new-date {
+    padding: 5px 10px;
+    font-size: 20px;
+  }
+  #new-category {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  #new-date {
+    margin: 0 10px 0 0;
+  }
+  #new-button img {
+    width: 30px;
+  }
+
+  #filter-date-from,
+  #filter-date-to,
+  #filter-category {
+    border-radius: 0;
+  }
+  #filter-pending,
+  #filter-missed {
+    border-radius: 0;
+  }
+
+  .list-item > div:nth-child(1) {
+    margin-bottom: 15px;
+  }
+  .list-item > div:nth-child(2) {
+    margin-left: 30px;
+  }
+  .separator {
+    margin: 0 -10px 20px -10px;
+  }
+  .task-check {
+    margin-left: 0;
+    height: 20px;
+    width: 20px;
+  }
+  .edit-task {
+    font-size: 28px;
+  }
+  .task-delete-button img {
+    height: 20px;
+  }
+  .edit-category,
+  .edit-priority,
+  .edit-date {
+    font-size: 16px;
+  }
+  .edit-category {
+    max-width: 70px;
+  }
+
+  .subtasks {
+    margin: 0;
+  }
+  .subtask-check {
+    margin-left: 0;
+    height: 16px;
+    width: 16px;
+  }
+  .edit-subtask {
+    font-size: 18px;
+  }
+  .subtask-delete-button img {
+    height: 16px;
+  }
+
+  .new-subtask {
+    margin-left: 28px;
+    font-size: 16px;
+  }
+  .subtask-add-button {
+    margin-right: 0;
+  }
+  .subtask-add-button img {
+    height: 16px;
+  }
+
+  .new-tag {
+    margin-left: 0;
+  }
+  .tags > li,
+  .add-tag-wrapper {
+    font-size: 14px;
+    margin: 0 5px 5px 0;
+  }
+  .new-tag {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 96px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+
+  #filter-button img {
+    height: 20px;
+  }
+
+  #filter-area {
+    max-height: 450px;
+  }
+  #filter-area.hide {
+    max-height: 30px;
+  }
+  #filter-area label {
+    font-size: 14px;
+  }
+  #date-filters {
+    display: flex;
+    flex-direction: column;
+  }
+  #filter-date-from,
+  #filter-date-to,
+  #filter-category {
+    font-size: 14px;
+  }
+  #filter-date-to {
+    margin-top: 5px;
+  }
+  #filter-radio-group {
+    flex-wrap: wrap;
+  }
+  #filter-radio-group > span {
+    margin: 0 0 5px 0;
+    width: 100%;
+  }
+  #filter-radio-group > input {
+    margin: 0 5px 0 12px;
+    height: 15px;
+    width: 15px;
+  }
+  #filter-radio-group > input:nth-of-type(1) {
+    margin-left: 0;
+  }
+  #filter-category {
+    margin: 0 10px;
+    width: 70%;
+  }
+  #filter-pending,
+  #filter-missed {
+    font-size: 14px;
+  }
+  #filter-pending {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .separator {
+    margin: 0 -10px 15px -10px;
+  }
+  .list-item > div:nth-child(1) {
+    margin-bottom: 10px;
+  }
+  .list-item > div:nth-child(2) {
+    margin-left: 0;
+  }
+  .edit-task {
+    font-size: 24px;
+  }
+  .edit-category,
+  .edit-priority,
+  .edit-date {
+    font-size: 14px;
+  }
+
+  .edit-subtask {
+    font-size: 16px;
+  }
+  .new-subtask {
+    margin-left: 24px;
+    font-size: 14px;
+  }
+
+  .tag-container {
+    flex-wrap: wrap;
+  }
+  .tags > li,
+  .add-tag-wrapper {
+    font-size: 13px;
+  }
+  .new-tag {
+    font-size: 13px;
   }
 }

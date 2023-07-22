@@ -161,12 +161,13 @@ var taskItem = (task) => {
         </button>
       </div>
       <div class="separator"></div>
-      <div>
-        <input class="new-tag" type="text" placeholder="Add tags" />
-        <button class="tag-add-button">
-          <img src="images/plus.svg" />
-        </button>
-        <div class="flex-filler"></div>
+      <div class="tag-container">
+        <div class="add-tag-wrapper">
+          <input class="new-tag" type="text" placeholder="Add tags" />
+          <button class="tag-add-button">
+            <img src="images/plus.svg" />
+          </button>
+        </div>
         <ul class="tags"></ul>
       </div>
 	`;
