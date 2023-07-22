@@ -11,7 +11,7 @@ var filterDateFrom = document.getElementById("filter-date-from");
 var filterDateTo = document.getElementById("filter-date-to");
 var filterCategory = document.getElementById("filter-category");
 var filterMissed = document.getElementById("filter-missed");
-var filterPending = document.getElementById("filter-pending");
+var filterUpcoming = document.getElementById("filter-upcoming");
 
 var data = JSON.parse(localStorage.getItem("tasks"));
 if (data == null) data = [];
@@ -285,8 +285,8 @@ const renderTasks = () => {
         (filterPriority.value == 3 || filterPriority.value == x.priority) &&
         (filterCategory.value == "" || filterCategory.value == x.category) &&
         !(
-          (filterCompleted.value == 0 && x.done == true) ||
-          (filterCompleted.value == 1 && x.done == false)
+          (filterCompleted.value == 0 && x.done == false) ||
+          (filterCompleted.value == 1 && x.done == true)
         )
       );
     })
@@ -315,7 +315,7 @@ var radios = [
 radios.forEach((x) => {
   x.onchange = renderTasks;
 });
-filterPending.onclick = () => {
+filterUpcoming.onclick = () => {
   let date = new Date();
   document.querySelectorAll('input[name="completed"]')[1].checked = true;
   filterDateTo.value = null;
@@ -324,7 +324,7 @@ filterPending.onclick = () => {
 };
 filterMissed.onclick = () => {
   let date = new Date();
-  document.querySelectorAll('input[name="completed"]')[0].checked = true;
+  document.querySelectorAll('input[name="completed"]')[1].checked = true;
   filterDateFrom.value = null;
   filterDateTo.value = date.toJSON().slice(0, 10);
   renderTasks();
