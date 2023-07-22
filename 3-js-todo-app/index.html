@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <body>
+      <div id="main">
+        <h1>TODO</h1>
+        <div id="input-area">
+          <input id="new-input" type="text" placeholder="Add Task" />
+          <input id="new-category" type="text" placeholder="Category" />
+          <input id="new-date" type="date" />
+          <button id="new-button"><img src="images/plus.svg" /></button>
+        </div>
+        <div id="filter-area" class="">
+          <h2>
+            Filter
+            <button id="filter-button"><img src="images/plus.svg" /></button>
+          </h2>
+          <div id="date-filters">
+            <label for="filter-date-from">From:</label>
+            <input id="filter-date-from" type="date" />
+            <label for="filter-date-to">To:</label>
+            <input id="filter-date-to" type="date" />
+          </div>
+          <div id="filter-radio-group">
+            <span>Priority:</span>
+            <input type="radio" name="priority" id="priority-low" value="0" />
+            <label for="priority-low">Low</label>
+            <input type="radio" name="priority" id="priority-med" value="1" />
+            <label for="priority-med">Med</label>
+            <input type="radio" name="priority" id="priority-high" value="2" />
+            <label for="priority-high">High</label>
+            <input
+              type="radio"
+              name="priority"
+              id="priority-all"
+              value="3"
+              checked
+            />
+            <label for="priority-all">All</label>
+          </div>
+          <div id="filter-radio-group">
+            <span>Completed:</span>
+            <input type="radio" name="completed" value="0" id="completed-0" />
+            <label for="completed-0">Complete</label>
+            <input type="radio" name="completed" value="1" id="completed-1" />
+            <label for="completed-1">Incomplete</label>
+            <input
+              type="radio"
+              name="completed"
+              value="2"
+              id="completed-2"
+              checked
+            />
+            <label for="completed-2">All</label>
+          </div>
+          <div>
+            <input
+              id="filter-category"
+              type="text"
+              placeholder="Filter by Category"
+            />
+            <button id="filter-pending">Pending</button>
+            <button id="filter-missed">Missed</button>
+          </div>
+        </div>
+        <ul id="list"></ul>
+        <div id="edit-window"></div>
+      </div>
+
+      <script type="text/javascript" src="script.js"></script>
+    </body>
+  </head>
+</html>
