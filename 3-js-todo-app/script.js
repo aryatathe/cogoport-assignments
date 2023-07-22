@@ -15,7 +15,6 @@ var filterUpcoming = document.getElementById("filter-upcoming");
 
 var data = JSON.parse(localStorage.getItem("tasks"));
 if (data == null) data = [];
-console.log(data);
 
 const addTask = (text, category, date) => {
   data.push({
@@ -28,7 +27,6 @@ const addTask = (text, category, date) => {
     priority: 1,
     done: false,
   });
-  console.log(data);
   localStorage.setItem("tasks", JSON.stringify(data));
   renderTasks();
 };
@@ -40,7 +38,6 @@ const deleteTask = (id) => {
       break;
     }
   }
-  console.log(data);
   localStorage.setItem("tasks", JSON.stringify(data));
   renderTasks();
 };
@@ -52,7 +49,6 @@ const deleteSubtask = (id, n) => {
       break;
     }
   }
-  console.log(data);
   localStorage.setItem("tasks", JSON.stringify(data));
   renderTasks();
 };
@@ -64,7 +60,6 @@ const deleteTag = (id, n) => {
       break;
     }
   }
-  console.log(data);
   localStorage.setItem("tasks", JSON.stringify(data));
   renderTasks();
 };
@@ -76,7 +71,6 @@ const completeTask = (id) => {
       break;
     }
   }
-  console.log(data);
   localStorage.setItem("tasks", JSON.stringify(data));
   renderTasks();
 };
@@ -88,7 +82,6 @@ const completeSubtask = (id, n) => {
       break;
     }
   }
-  console.log(data);
   localStorage.setItem("tasks", JSON.stringify(data));
   renderTasks();
 };
@@ -100,7 +93,6 @@ const addTag = (id, tag) => {
       break;
     }
   }
-  console.log(data);
   localStorage.setItem("tasks", JSON.stringify(data));
   renderTasks();
 };
@@ -112,7 +104,6 @@ const addSubtask = (id, subtask) => {
       break;
     }
   }
-  console.log(data);
   localStorage.setItem("tasks", JSON.stringify(data));
   renderTasks();
 };
@@ -124,7 +115,6 @@ const updateTask = (task) => {
       break;
     }
   }
-  console.log(data);
   localStorage.setItem("tasks", JSON.stringify(data));
   renderTasks();
 };
@@ -145,9 +135,9 @@ var taskItem = (task) => {
       </div>
 			<div>
         <input class="edit-date" type="date" value="${task.date}" />
-        <button class="edit-priority priority-${task.priority}">${
-    task.priority == 0 ? "Low" : task.priority == 1 ? "Med" : "High"
-  }</button>
+        <button class="edit-priority priority-${task.priority}">
+          ${task.priority == 0 ? "Low" : task.priority == 1 ? "Med" : "High"}
+        </button>
         <div class="flex-filler"></div>
         <input class="edit-category" type="text" value="${task.category}" />
       </div>
@@ -207,21 +197,10 @@ var taskItem = (task) => {
     completeTask(task.id);
   };
 
-  task.tags.forEach((tag, i) => {
-    var tagItem = document.createElement("li");
-    tagItem.innerHTML = `
-    <span>#${tag}</span>
-    <button class="tag-delete-button">
-      <img src="images/plus.svg" />
-    </button>`;
-    var tagDeleteButton =
-      tagItem.getElementsByClassName("tag-delete-button")[0];
-    tagDeleteButton.onclick = () => {
-      console.log("text");
-      deleteTag(task.id, i);
-    };
-    tags.appendChild(tagItem);
-  });
+  subtaskAddButton.onclick = () => {
+    if (newSubtask.value == "") return;
+    addSubtask(task.id, newSubtask.value);
+  };
 
   task.subtasks.forEach((subtask, i) => {
     var subtaskItem = document.createElement("li");
@@ -243,7 +222,6 @@ var taskItem = (task) => {
       updateTask(task);
     };
     subtaskDeleteButton.onclick = () => {
-      console.log("text");
       deleteSubtask(task.id, i);
     };
     subtaskCheck.onclick = () => {
@@ -252,25 +230,35 @@ var taskItem = (task) => {
     subtasks.appendChild(subtaskItem);
   });
 
-  deleteButton.onclick = () => {
-    console.log("text");
-    deleteTask(task.id);
-  };
-
   tagAddButton.onclick = () => {
     if (newTag.value == "") return;
     addTag(task.id, newTag.value);
   };
 
-  subtaskAddButton.onclick = () => {
-    if (newSubtask.value == "") return;
-    addSubtask(task.id, newSubtask.value);
+  task.tags.forEach((tag, i) => {
+    var tagItem = document.createElement("li");
+    tagItem.innerHTML = `
+    <span>#${tag}</span>
+    <button class="tag-delete-button">
+      <img src="images/plus.svg" />
+    </button>`;
+    var tagDeleteButton =
+      tagItem.getElementsByClassName("tag-delete-button")[0];
+    tagDeleteButton.onclick = () => {
+      deleteTag(task.id, i);
+    };
+    tags.appendChild(tagItem);
+  });
+
+  deleteButton.onclick = () => {
+    deleteTask(task.id);
   };
 
   return listItem;
 };
 
 const renderTasks = () => {
+  console.log(data);
   list.innerHTML = "";
 
   var filterPriority = document.querySelector('input[name="priority"]:checked');
@@ -293,14 +281,24 @@ const renderTasks = () => {
     .forEach((task) => {
       list.appendChild(taskItem(task));
     });
+
+  var inputItems = document.querySelectorAll("input");
+  inputItems.forEach((x) => {
+    x.onkeydown = (e) => {
+      if (e.key == "Enter") {
+        x.blur();
+      }
+    };
+  });
 };
 
 newButton.onclick = () => {
-  console.log(newInput.value, newCategory.value, newDate.value);
   if (newInput.value == "" || newCategory.value == "" || newDate.value == "")
     return;
   addTask(newInput.value, newCategory.value, newDate.value);
   newInput.value = "";
+  newCategory.value = "";
+  newDate.value = "";
 };
 
 renderTasks();
