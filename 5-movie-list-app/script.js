@@ -14,7 +14,6 @@ const fetchSearch = (text, page) => {
   fetch(url(`s=${text}&page=${page}`))
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       movieList = data.Search;
       renderList();
     });
@@ -28,6 +27,7 @@ const movieCard = (movie) => {
 };
 
 const renderList = () => {
+  console.log(movieList);
   list.innerHTML = "";
   movieList.forEach((movie) => {
     list.appendChild(movieCard(movie));
