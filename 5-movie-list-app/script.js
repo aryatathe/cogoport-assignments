@@ -155,6 +155,7 @@ const renderDetails = () => {
   });
   details.innerHTML = `
     <div id="details-inner">
+      <button id="details-close"><span>X</span></button>
       <div id="details-image">
         <img src="${
           movieDetails.Poster == "N/A"
@@ -163,42 +164,20 @@ const renderDetails = () => {
         }" />
       </div>
       <div id="details-contents">
-        <span id="details-title">Title: <strong>${
-          movieDetails.Title
-        }</strong></span>
-        <span id="details-type">Type: <strong>${
-          movieDetails.Type
-        }</strong></span>
-        <span id="details-rated">Rated: <strong>${
-          movieDetails.Rated
-        }</strong></span>
-        <span id="details-released">Released: <strong>${
-          movieDetails.Released
-        }</strong></span>
-        <span id="details-runtime">Runtime: <strong>${
-          movieDetails.Runtime
-        }</strong></span>
-        <span id="details-imdb">IMDb Rating: <strong>${
-          movieDetails.imdbRating
-        } (${movieDetails.imdbVotes} votes)</strong></span>
-        <span id="details-genre">Genre: <strong>${
-          movieDetails.Genre
-        }</strong></span>
-        <span id="details-language">Language: <strong>${
-          movieDetails.Language
-        }</strong></span>
-        <span id="details-director">Director: <strong>${
-          movieDetails.Director
-        }</strong></span>
-        <span id="details-writer">Writer: <strong>${
-          movieDetails.Writer
-        }</strong></span>
-        <span id="details-actors">Actors: <strong>${
-          movieDetails.Actors
-        }</strong></span>
-        <span id="details-plot">Plot: <strong>${
-          movieDetails.Plot
-        }</strong></span>
+        <span>Title: <strong>${movieDetails.Title}</strong></span>
+        <span>Type: <strong>${movieDetails.Type}</strong></span>
+        <span>Rated: <strong>${movieDetails.Rated}</strong></span>
+        <span>Released: <strong>${movieDetails.Released}</strong></span>
+        <span>Runtime: <strong>${movieDetails.Runtime}</strong></span>
+        <span>IMDb Rating: <strong>${movieDetails.imdbRating} (${
+    movieDetails.imdbVotes
+  } votes)</strong></span>
+        <span>Genre: <strong>${movieDetails.Genre}</strong></span>
+        <span>Language: <strong>${movieDetails.Language}</strong></span>
+        <span>Director: <strong>${movieDetails.Director}</strong></span>
+        <span>Writer: <strong>${movieDetails.Writer}</strong></span>
+        <span>Actors: <strong>${movieDetails.Actors}</strong></span>
+        <span>Plot: <strong>${movieDetails.Plot}</strong></span>
         <div id="ratings">
           <input id="rating-slider" type="range" min="0" max="5" value="${
             ratingNo == -1 ? 0 : ratings[ratingNo].rating
@@ -220,6 +199,10 @@ const renderDetails = () => {
   var ratingSliderLabel = document.getElementById("rating-label");
   var ratingComment = document.getElementById("rating-comment");
   var ratingSubmit = document.getElementById("rating-submit");
+  var closeButton = document.getElementById("details-close");
+  closeButton.onclick = () => {
+    details.className = "";
+  };
   ratingSlider.oninput = () => {
     ratingSliderLabel.innerHTML = `Rating: <strong>${ratingSlider.value}</strong> stars`;
   };
@@ -238,6 +221,11 @@ const renderDetails = () => {
   };
 };
 
+search.onkeydown = (e) => {
+  if (e.key == "Enter" && search.value != "") {
+    fetchSearch(search.value, 1);
+  }
+};
 searchButton.onclick = () => {
   if (search.value == "") return;
   fetchSearch(search.value, 1);

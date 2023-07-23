@@ -19,9 +19,6 @@ h1 {
 h2 {
   font-size: 24px;
 }
-h3 {
-  font-size: initial;
-}
 button {
   background: transparent;
   outline: none;
@@ -49,12 +46,14 @@ input {
   display: flex;
   align-items: center;
   max-width: fit-content;
+  width: auto;
   margin: 0 auto 30px auto;
   padding: 10px 15px;
   border-radius: 9999px;
   background: #edc7b7;
 }
 #search-input {
+  width: 100%;
   font-size: 24px;
 }
 #search-button img {
@@ -164,13 +163,32 @@ input {
 }
 
 #details-inner {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-height: 100%;
+  max-width: 1000px;
+  overflow-y: auto;
   box-sizing: border-box;
   padding: 30px;
   border-radius: 30px;
   background: #eee2dc;
+}
+#details-close {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  background: #e50140;
+  border-radius: 0 0 0 30px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
 }
 #details-image {
   min-width: fit-content;
@@ -197,6 +215,9 @@ input {
   align-items: center;
   margin-top: 20px;
 }
+#rating-label {
+  font-size: 18px;
+}
 #rating-comment {
   font-family: inherit;
   min-width: 200px;
@@ -208,9 +229,6 @@ input {
   margin: 10px 0;
   font-size: 16px;
 }
-#rating-label {
-  font-size: 18px;
-}
 #rating-label > strong {
   color: #e50140;
 }
@@ -220,4 +238,60 @@ input {
   background: #edc7b7;
   font-weight: bold;
   font-size: 18px;
+}
+
+@media screen and (max-width: 650px) {
+  #details-inner {
+    flex-direction: column;
+    padding: 10px;
+  }
+  #details-image {
+    max-height: 40vh;
+    margin-right: 0;
+    margin-bottom: 10px;
+    aspect-ratio: 2/3;
+  }
+  #details-image img {
+    width: 100%;
+    height: 100%;
+  }
+  #details-contents > span {
+    font-size: 16px;
+  }
+
+  #ratings {
+    margin-top: 10px;
+  }
+  #rating-label,
+  #rating-submit {
+    font-size: 16px;
+  }
+  #rating-comment {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 80px;
+  }
+
+  #main {
+    padding: 0 5px;
+  }
+
+  #search-area {
+    padding: 5px 10px;
+  }
+  #search-input {
+    font-size: 20px;
+  }
+
+  #pagination > span {
+    font-size: 16px;
+  }
+  #pagination > button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
 }

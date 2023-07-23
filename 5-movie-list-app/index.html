@@ -11,16 +11,18 @@
     <body>
       <div id="main">
         <h1>Movie List</h1>
+        <div id="search-area">
+          <input id="search-input" type="text" placeholder="Search" />
+          <button id="search-button">
+            <img src="images/search-icon.svg" />
+          </button>
+        </div>
+        <div id="list-area">
+          <div id="pagination"></div>
+          <div id="list"></div>
+        </div>
+        <div id="details"></div>
       </div>
-      <div id="search-area">
-        <input id="search-input" type="text" placeholder="Search" />
-        <button id="search-button"><img src="images/search-icon.svg" /></button>
-      </div>
-      <div id="list-area">
-        <div id="pagination"></div>
-        <div id="list"></div>
-      </div>
-      <div id="details"></div>
 
       <script type="text/javascript" src="script.js"></script>
     </body>
