@@ -54,7 +54,14 @@ const fetchDetails = (imdbID) => {
 const movieCard = (movie) => {
   var movieItem = document.createElement("div");
   movieItem.className = "movie-item";
-  movieItem.innerHTML = movie.Title;
+  movieItem.innerHTML = `
+    <div class="card-image">
+      <img src=${movie.Poster} />
+    </div>
+    <h2 id="card-title">${movie.Title}</h2>
+    <span id="card-year">${movie.Year}</span>
+    <span id="card-type">${movie.Type}</span>
+  `;
   movieItem.onclick = () => fetchDetails(movie.imdbID);
   return movieItem;
 };
@@ -142,6 +149,7 @@ const renderDetails = () => {
     <span id="details-title">Title: <strong>${
       movieDetails.Title
     }</strong></span>
+    <span id="details-type">Type: <strong>${movieDetails.Type}</strong></span>
     <span id="details-rated">Rated: <strong>${
       movieDetails.Rated
     }</strong></span>
