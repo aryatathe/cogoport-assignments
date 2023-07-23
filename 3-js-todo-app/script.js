@@ -483,17 +483,17 @@ radios.forEach((x) => {
   x.onchange = renderTasks;
 });
 filterUpcoming.onclick = () => {
-  let date = new Date();
+  document.querySelectorAll('input[name="priority"]')[3].checked = true;
   document.querySelectorAll('input[name="completed"]')[1].checked = true;
   filterDateTo.value = null;
-  filterDateFrom.value = date.toJSON().slice(0, 10);
+  filterDateFrom.value = new Date().toJSON().slice(0, 10);
   renderTasks();
 };
 filterMissed.onclick = () => {
-  let date = new Date();
+  document.querySelectorAll('input[name="priority"]')[3].checked = true;
   document.querySelectorAll('input[name="completed"]')[1].checked = true;
   filterDateFrom.value = null;
-  filterDateTo.value = date.toJSON().slice(0, 10);
+  filterDateTo.value = new Date().toJSON().slice(0, 10);
   renderTasks();
 };
 

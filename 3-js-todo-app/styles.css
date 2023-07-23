@@ -389,7 +389,7 @@ ul {
     border-radius: 0;
   }
   #new-button {
-    margin-right: 10px;
+    margin-right: 15px;
   }
   .list-item {
     border-radius: 0;
@@ -421,6 +421,9 @@ ul {
   }
   #new-date {
     margin: 0 10px 0 0;
+  }
+  #new-button {
+    margin-right: 10px;
   }
   #new-button img {
     width: 30px;
